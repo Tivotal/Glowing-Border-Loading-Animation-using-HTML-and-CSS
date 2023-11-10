@@ -1,0 +1,58 @@
+/* Created by Tivotal */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1b1b1b;
+}
+
+.box {
+  position: relative;
+  height: 300px;
+  width: 300px;
+  background: rgba(45, 45, 45, 1);
+  overflow: hidden;
+  transform: rotate(90deg);
+}
+
+.box::before {
+  position: absolute;
+  content: "";
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(#01e100, transparent, transparent);
+  animation: anim 1.5s linear infinite;
+}
+
+@keyframes anim {
+  0% {
+    transform: translate(-150px, -150px);
+  }
+  25% {
+    transform: translate(0px, -150px);
+  }
+  50% {
+    transform: translate(0px, 0px);
+  }
+  75% {
+    transform: translate(-150px, 0px);
+  }
+  100% {
+    transform: translate(-150px, -150px);
+  }
+}
+
+.box::after {
+  position: absolute;
+  content: "";
+  inset: 2px;
+  background: rgba(45, 45, 45, 0.9);
+}
